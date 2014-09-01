@@ -31,7 +31,7 @@ h3 {
 h1 {
 	color: #2980b9;
 	width: 100%;
-	padding: 0.125em 0;
+	padding: 0;
 	margin: 0;
 	background-color: #fff;
 	font-size: 5em;
@@ -45,7 +45,7 @@ h2 {
 	padding: 0.125em 0;
 	margin: 0;
 	background-color: #fff;
-	font-size: 3.75em;
+	font-size: 2em;
 	font-weight: 300;
 	text-align: center;
 }
