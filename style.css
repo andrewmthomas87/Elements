@@ -1,0 +1,51 @@
+
+@font-face {
+	font-family: 'Hallo';
+	src: url('Hallo.otf');
+	font-weight: 300;
+}
+
+html, body {
+	width: 100%;
+	margin: 0;
+}
+
+body {
+	font-family: 'Hallo', sans-serif;
+}
+
+h3 {
+	color: #bbb;
+	width: 100%;
+	padding: 0.125em 0;
+	margin: 0;
+	background-color: #eee;
+	border: none;
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	font-size: 1em;
+	font-weight: 300;
+	text-align: center;
+}
+
+h1 {
+	color: #2980b9;
+	width: 100%;
+	padding: 0.125em 0;
+	margin: 0;
+	background-color: #fff;
+	font-size: 5em;
+	font-weight: 300;
+	text-align: center;
+}
+
+h2 {
+	color: #555;
+	width: 100%;
+	padding: 0.125em 0;
+	margin: 0;
+	background-color: #fff;
+	font-size: 3.75em;
+	font-weight: 300;
+	text-align: center;
+}
