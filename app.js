@@ -38,10 +38,7 @@ function next() {
 	answer = characteristics[answerCharacteristic][element];
 	var answers = [answer];
 	for (var i = 1; i < 4; i++) {
-		do {
-			answers[i] = characteristics[answerCharacteristic][parseInt(Math.random() * numbers.length)];
-		}
-		while (answers.indexOf(answers[i]) > -1);
+		answers[i] = characteristics[answerCharacteristic][parseInt(Math.random() * numbers.length)];
 	}
 	answers.sort(function() {
 		return 0.5 - Math.random();
