@@ -38,7 +38,7 @@ a:hover, a:active {
 a#menu {
 	position: absolute;
 	display: inline;
-	top: 5px;
+	top: 0;
 	left: 10px;
 	color: #999;
 	width: 1em;
