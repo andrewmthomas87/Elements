@@ -30,6 +30,7 @@ function next() {
 	var element = questionCharacteristic;
 	$('body h3:first-child').html(characteristicNames[questionCharacteristic]);
 	var answerCharacteristic = questionCharacteristic;
+	return;
 	while (answerCharacteristic == questionCharacteristic) {
 		answerCharacteristic = parseInt(Math.random() * characteristics.length);
 	}
