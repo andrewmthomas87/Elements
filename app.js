@@ -1,6 +1,6 @@
 
 function resize() {
-	$('body').css('font-size', $(window).width() / 10);
+	$('body').css('font-size', $(window).width() / 15);
 }
 
 $(window).resize(resize);
