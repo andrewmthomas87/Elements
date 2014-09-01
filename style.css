@@ -53,3 +53,13 @@ h2 {
 	font-weight: 300;
 	text-align: center;
 }
+
+h2.correct {
+	color: #fff;
+	background-color: #2ecc71;
+}
+
+h2.incorrect {
+	color: #fff;
+	background-color: #e74c3c;
+}

@@ -23,9 +23,27 @@ $(window).resize(resize);
 $(document).ready(function() {
 	resize();
 	next();
+	$('h2').click(function() {
+		if ($(this).html() == answer) {
+			$(this).addClass('correct');
+		}
+		else {
+			$(this).addClass('incorrect');
+			for (var i = 0; i < 4; i++) {
+				if ($('div h2:nth-child(' + (i + 1) + ')').html() == answer) {
+					$('div h2:nth-child(' + (i + 1) + ')').addClass('correct');
+				}
+			}
+		}
+		setTimeout(function() {
+			next();
+		}, 2500);
+	});
 });
 
 function next() {
+	$('h2.correct').removeClass('correct');
+	$('h2.incorrect').removeClass('incorrect');
 	var questionCharacteristic = parseInt(Math.random() * 3);
 	var element = parseInt(Math.random() * 40);
 	$('h3#questionCharacteristic').html(characteristicNames[questionCharacteristic]);
@@ -38,12 +56,23 @@ function next() {
 	answer = characteristics[answerCharacteristic][element];
 	var answers = [answer];
 	for (var i = 1; i < 4; i++) {
-		answers[i] = characteristics[answerCharacteristic][parseInt(Math.random() * 40)];
+		var randomAnswer;
+		do {
+			randomAnswer = characteristics[answerCharacteristic][parseInt(Math.random() * 40)];
+		}
+		while (answers.indexOf(randomAnswer) > -1);
+		answers[i] = randomAnswer;
+	}
+	if (answerCharacteristic == 3) {
+		answer = colors[answer];
+		for (var i = 0; i < 4; i++) {
+			answers[i] = colors[answers[i]];
+		}
 	}
 	answers.sort(function() {
 		return 0.5 - Math.random();
 	});
 	for (var i = 0; i < 4; i++) {
-		$('body h2:nth-child(' + (i + 1) + ')').html(answers[i]);
+		$('div h2:nth-child(' + (i + 1) + ')').html(answers[i]);
 	}
 }
