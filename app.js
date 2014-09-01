@@ -26,15 +26,15 @@ $(document).ready(function() {
 });
 
 function next() {
-	var questionCharacteristic = parseInt(Math.random() * numbers.length);
-	var element = questionCharacteristic;
+	var questionCharacteristic = parseInt(Math.random() * 3);
 	$('body h3:first-child').html(characteristicNames[questionCharacteristic]);
+	var element = parseInt(Math.random() * 40);
+	$('body h1').html(characteristics[questionCharacteristic][element]);
 	var answerCharacteristic = questionCharacteristic;
 	while (answerCharacteristic == questionCharacteristic) {
 		answerCharacteristic = parseInt(Math.random() * characteristics.length);
 	}
 	$('body h3:last-child').html(characteristicNames[answerCharacteristic]);
-	return;
 	answer = characteristics[answerCharacteristic][element];
 	var answers = [answer];
 	for (var i = 1; i < 4; i++) {
