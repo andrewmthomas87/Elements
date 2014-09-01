@@ -37,11 +37,11 @@ a:hover, a:active {
 
 a#menu {
 	position: fixed;
-	display: inline-block;
-	top: 10px;
-	right: 10px;
+	display: inline;
+	top: 5px;
+	right: 5px;
 	color: #999;
-	font-size: 2em;
+	font-size: 1.5em;
 	font-weight: 300;
 	text-decoration: none;
 }
