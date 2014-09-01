@@ -53,8 +53,3 @@ h2 {
 	font-weight: 300;
 	text-align: center;
 }
-
-h2:hover {
-	color: #2980b9;
-	background-color: #eee;
-}
