@@ -30,17 +30,18 @@ function next() {
 	var element = questionCharacteristic;
 	$('body h3:first-child').html(characteristicNames[questionCharacteristic]);
 	var answerCharacteristic = questionCharacteristic;
-	return;
 	while (answerCharacteristic == questionCharacteristic) {
 		answerCharacteristic = parseInt(Math.random() * characteristics.length);
 	}
 	$('body h3:last-child').html(characteristicNames[answerCharacteristic]);
+	return;
 	answer = characteristics[answerCharacteristic][element];
 	var answers = [answer];
 	for (var i = 1; i < 4; i++) {
 		do {
 			answers[i] = characteristics[answerCharacteristic][parseInt(Math.random() * numbers.length)];
-		} while (answers.indexOf(answers[i]) > -1);
+		}
+		while (answers.indexOf(answers[i]) > -1);
 	}
 	answers.sort(function() {
 		return 0.5 - Math.random();
