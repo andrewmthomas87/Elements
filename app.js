@@ -8,6 +8,8 @@ var locations = [0, 3, 0, 0, 2, 3, 3, 3, 3, 3, 0, 0, 2, 2, 3, 3, 3, 3, 0, 0, 1, 
 var characteristics = [numbers, symbols, names, locations];
 var characteristicNames = ['Number', 'Symbol', 'Name', 'Location'];
 
+var answer;
+
 window.addEventListener('load', function() {
 	FastClick.attach(document.body);
 }, false);
@@ -20,29 +22,29 @@ $(window).resize(resize);
 
 $(document).ready(function() {
 	resize();
-	var element = (int) (Math.random() * numbers.length);
-	var element2 = element;
-	while (element2 == element) {
-		var element2 = (int) (Math.random() * numbers.length);
+	next();
+});
+
+function next() {
+	var questionCharacteristic = parseInt(Math.random() * numbers.length);
+	var element = questionCharacteristic;
+	$('body h3:first-child').html(characteristicNames[questionCharacteristic]);
+	var answerCharacteristic = questionCharacteristic;
+	while (answerCharacteristic == questionCharacteristic) {
+		answerCharacteristic = parseInt(Math.random() * characteristics.length);
 	}
-	var element3 = element;
-	while (element3 == element || element3 == element2) {
-		var element3 = (int) (Math.random() * numbers.length);
+	$('body h3:last-child').html(characteristicNames[answerCharacteristic]);
+	answer = characteristics[answerCharacteristic][element];
+	var answers = [answer];
+	for (var i = 1; i < 4; i++) {
+		do {
+			answers[i] = characteristics[answerCharacteristic][parseInt(Math.random() * numbers.length)];
+		} while (answers.indexOf(answers[i]) > -1);
 	}
-	var element4 = element;
-	while (element4 == element || element4 == element3 || element4 == element2) {
-		var element4 = (int) (Math.random() * numbers.length);
-	}
-	var characteristic = (int) (Math.random() * characteristics.length);
-	var characteristic2 = characteristic;
-	while (characteristic2 == characteristic) {
-		var characteristic2 = (int) (Math.random() * characteristics.length);
-	}
-	$('body h3:first-child').html(characteristicNames[characteristic]);
-	$('body h1').html(characteristics[characteristic][element]);
-	var answers = [characteristics[characteristic][element], characteristics[characteristic2][element2], characteristics[characteristic3][element3], characteristics[characteristic4][element4]];
-	answers.sort(function() { return 0.5 - Math.random() });
-	for (var i = 0; i < answers.length; i++) {
+	answers.sort(function() {
+		return 0.5 - Math.random();
+	});
+	for (var i = 0; i < 4; i++) {
 		$('body h2:nth-child(' + (i + 1) + ')').html(answers[i]);
 	}
-});
+}
