@@ -7,4 +7,7 @@ $(window).resize(resize);
 
 $(document).ready(function() {
 	resize();
+	$('h2').click(function() {
+		alert('Correct');
+	});
 });
