@@ -24,6 +24,9 @@ $(document).ready(function() {
 	resize();
 	next();
 	$('h2').click(function() {
+		if ($('h2.correct').length > 0) {
+			return;
+		}
 		if ($(this).html() == answer) {
 			$(this).addClass('correct');
 		}
