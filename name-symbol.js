@@ -44,7 +44,7 @@ $(document).ready(function() {
 	$('section').click(function() {
 		$('section').css('top', '-100%');
 		setTimeout(function() {
-			$(this).removeClass('blue green red yellow')
+			$('section').removeClass('blue green red yellow');
 			$('section h4.active').removeClass('active');
 			next();
 		}, 125);
