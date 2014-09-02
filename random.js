@@ -45,8 +45,8 @@ $(document).ready(function() {
 	$('section').click(function() {
 		$('section').css('top', '-100%');
 		setTimeout(function() {
-			$(this).attr('class', '');
-			$(this).find('h4.active').removeClass('active');
+			$(this).removeClass('blue green red yellow')
+			$('section h4.active').removeClass('active');
 			next();
 		}, 125);
 	});
@@ -63,13 +63,15 @@ function next() {
 		$('section h4:nth-child(' + (i + 1) + ')').html(characteristics[i][element]);
 	}
 	$('section').addClass(colors[characteristics[3][element]].toLowerCase());
-	$('section h4:nth-child(' + (questionCharacteristic + 1) + ')').addClass('active');
 	var answerCharacteristic = questionCharacteristic;
 	while (answerCharacteristic == questionCharacteristic) {
 		answerCharacteristic = parseInt(Math.random() * 4);
 	}
 	$('h3#answerCharacteristic').html(characteristicNames[answerCharacteristic]);
 	answer = characteristics[answerCharacteristic][element];
+	if (answerCharacteristic < 3) {
+		$('section h4:nth-child(' + (answerCharacteristic + 1) + ')').addClass('active');
+	}
 	var answers = [answer];
 	for (var i = 1; i < 4; i++) {
 		var randomAnswer;
