@@ -45,6 +45,7 @@ a#menu {
 	font-size: 1.5em;
 	font-weight: 300;
 	text-decoration: none;
+	z-index: 100;
 }
 
 a#menu:hover, a#menu:active {
@@ -96,4 +97,58 @@ h2.correct {
 h2.incorrect {
 	color: #fff;
 	background-color: #e74c3c;
+}
+
+section {
+	position: fixed;
+	top: -100%;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 101;
+	transition: top 0.125s linear;
+	-webkit-transition: top 0.125s linear;
+}
+
+section.blue {
+	background-color: #2980b9;
+}
+
+section.green {
+	background-color: #27ae60;
+}
+
+section.red {
+	background-color: #c0392b;
+}
+
+section.yellow {
+	background-color: #f39c12;
+}
+
+section h4 {
+	color: #fff;
+	width: 100%;
+	padding: 0.25em 0;
+	margin: 0;
+	font-size: 3em;
+	font-weight: 300;
+	text-align: center;
+}
+
+section.blue h4.active {
+	background-color: #3498db;
+}
+
+section.green h4.active {
+	background-color: #2ecc71;
+}
+
+section.red h4.active {
+	background-color: #e74c3c;
+}
+
+section.yellow h4.active {
+	background-color: #f1c40f;
 }

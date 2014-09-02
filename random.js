@@ -39,8 +39,16 @@ $(document).ready(function() {
 			}
 		}
 		setTimeout(function() {
+			$('section').css('top', '0');
+		}, 1000);
+	});
+	$('section').click(function() {
+		$('section').css('top', '-100%');
+		setTimeout(function() {
+			$(this).attr('class', '');
+			$(this).find('h4.active').removeClass('active');
 			next();
-		}, 2500);
+		}, 125);
 	});
 });
 
@@ -51,6 +59,11 @@ function next() {
 	var element = parseInt(Math.random() * 40);
 	$('h3#questionCharacteristic').html(characteristicNames[questionCharacteristic]);
 	$('h1').html(characteristics[questionCharacteristic][element]);
+	for (var i = 0; i < 3; i++) {
+		$('section h4:nth-child(' + (i + 1) + ')').html(characteristics[i][element]);
+	}
+	$('section').addClass(colors[characteristics[3][element]].toLowerCase());
+	$('section h4:nth-child(' + (questionCharacteristic + 1) + ')').addClass('active');
 	var answerCharacteristic = questionCharacteristic;
 	while (answerCharacteristic == questionCharacteristic) {
 		answerCharacteristic = parseInt(Math.random() * 4);
